@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="/vendor/boxicons/css/boxicons.css">
+    <link rel="stylesheet" href="/vendor/bootstrap-icons/bootstrap-icons.css">
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body id="login">
+        <div class="content">
+            <form class="needs-validation login" novalidate method="POST">
+                <h2>Login</h2>
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="type" class="form-control" name="accessLabel" id="username" required>
+                <div class="invalid-tooltip">
+                    Please provide a valid username
+                </div>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" name="password" required>
+                <div class="invalid-tooltip">
+                    Please provide a password
+                </div>
+                </div>
+
+                <div class="form-group">
+                    <button class="btn btn-primary" id="login-btn">Log In</button>
+                </div>
+            </form>
+        </div>
+    <script src="/vendor/jquery/jquery.js"></script>
+    <script src="/vendor/bootstrap/js/bootstrap.js"></script>
+    <script>
+      (function() {
+    'use strict';
+    window.addEventListener('load', function() {
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      var forms = document.getElementsByClassName('needs-validation');
+      // Loop over them and prevent submission
+      var validation = Array.prototype.filter.call(forms, function(form) {
+        form.addEventListener('submit', function(event) {
+          if (form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add('was-validated');
+        }, false);
+      });
+    }, false);
+  })();
+</script>
+<script src="/js/main.js"></script>
+</body>
+</html>
